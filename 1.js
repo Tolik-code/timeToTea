@@ -60,19 +60,31 @@ let addP = document.getElementById('addP');
 let addDH = document.getElementById('addDH');
 let addGP = document.getElementById('addGP');
 
-function createMAddToCard(modalContent){
+
+function createMAddToCard(modalContent,modalContent1){
     let modal = document.createElement('div');
-    let elemModal = document.createElement('div');
+    let elemRemModal = document.createElement('div');
+    let elemAddModal = document.createElement('div');
     document.body.prepend(modal);
     modal.classList.add('modalAddToCard');
     modal.id='modal';
-    modal.innerHTML = modalContent;
+    if(modalContent1!=undefined){
+        modal.innerHTML = modalContent + modalContent1;
+    } else{modal.innerHTML = modalContent;}
 
-    modal.prepend(elemModal);
-    elemModal.classList.add('removeModal');
-    elemModal.id = 'elemModal';
-    elemModal.innerHTML = 'X';
-    elemModal.onclick = function(){
+    modal.prepend(elemAddModal);
+    elemAddModal.id = 'elemAddModal';
+    elemAddModal.innerHTML = '<div><img src="icons8-корзина-50.png" class="imgFloat"/>добавить</div>';
+    elemAddModal.onclick = function(){
+        alert(1);
+        modalRemove();
+    }
+
+    modal.prepend(elemRemModal);
+    elemRemModal.classList.add('removeModal');
+    elemRemModal.id = 'elemRemModal';
+    elemRemModal.innerHTML = 'X';
+    elemRemModal.onclick = function(){
         modalRemove();
     }
 }
@@ -82,10 +94,59 @@ function modalRemove(){
 }
 
 addTG.onclick = function(){
-    createMAddToCard('<h1>TG</h1>');
+    createMAddToCard('<div class="modalBlock"><img src="IMG_20200408_170504_807.jpg" class="imgModal"/> Пакетики по 7гр/20грн. <img src="plus_PNG19.png" class="modalButton" id="add"/> <img src="minus_PNG27.png" class="modalButton" id="minus"/> <output class="totalAdd" id="totalAddTG"></output> <output class="totalAdd" id="totalPriceTG">0</output>grn </div>');
+  
+  let add = document.getElementById('add');
+  let minus = document.getElementById('minus');
+  let totalAddTG = document.getElementById('totalAddTG');
+  let totalPriceTG = document.getElementById('totalPriceTG');
+  totalAddTG.value = 0;
+ 
+  add.onclick = function(){
+   totalAddTG.value = (totalAddTG.value*1)+1;
+   totalPriceTG.value = totalAddTG.value*7;
+ };
+ minus.onclick = function(){
+     if((totalAddTG.value*1)-1<0){return}
+    totalAddTG.value = (totalAddTG.value*1)-1;
+    totalPriceTG.value = totalAddTG.value*7;
+  };
 };
 addP.onclick = function(){
-    createMAddToCard('<h1>Puer</h1>');
+    createMAddToCard('<div class="modalBlock"><img src="IMG_20200407_122439.jpg" class="imgModal"/> Бліни по 250гр/370грн. <img src="plus_PNG19.png" class="modalButton" id="add"/> <img src="minus_PNG27.png" id="minus" class="modalButton"/> <output class="totalAdd" id="totalAddP">0</output> <output class="totalAdd" id="totalPriceP">0</output>grn </div>','<div class="modalBlock"><img src="puer_kubiki.jpg" class="imgModal"/> Кубики 6гр/10грн <img src="plus_PNG19.png" class="modalButton" id="add1"/> <img src="minus_PNG27.png" id="minus1" class="modalButton"/> <output class="totalAdd" id="totalAddP1"></output> <output class="totalAdd" id="totalPriceP1">0</output>grn</div>');
+  
+  let add = document.getElementById('add');
+  let minus = document.getElementById('minus');
+  let totalAddP = document.getElementById('totalAddP');
+  let totalPriceP = document.getElementById('totalPriceP');
+  totalAddP.value = 0;
+ 
+  add.onclick = function(){
+   totalAddP.value = (totalAddP.value*1)+1;
+   totalPriceP.value = totalAddP.value*370;
+ };
+ minus.onclick = function(){
+     if((totalAddP.value*1)-1<0){return}
+    totalAddP.value = (totalAddP.value*1)-1;
+    totalPriceP.value = totalAddP.value*370;
+  };
+    
+  
+  let add1 = document.getElementById('add1');
+  let minus1 = document.getElementById('minus1');
+  let totalAddP1 = document.getElementById('totalAddP1');
+  let totalPriceP1 = document.getElementById('totalPriceP1');
+  totalAddP1.value = 0;
+ 
+  add1.onclick = function(){
+   totalAddP1.value = (totalAddP1.value*1)+1;
+   totalPriceP1.value = totalAddP1.value*10;
+ };
+ minus1.onclick = function(){
+     if((totalAddP1.value*1)-1<0){return}
+    totalAddP1.value = (totalAddP1.value*1)-1;
+    totalPriceP1.value = totalAddP1.value*10;
+  };
 };
 addDH.onclick = function(){
     createMAddToCard('<h1>DH</h1>');
@@ -96,7 +157,7 @@ addGP.onclick = function(){
 
 
 
-
+//корзина
 let itemsCart = document.getElementById('itemsCart');
 itemsCart.innerHTML = "12";
 
