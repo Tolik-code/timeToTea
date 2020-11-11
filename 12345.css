@@ -1,0 +1,201 @@
+body{
+  background-color: #D0F9EB;
+  transition-property: background-color;
+  transition-duration: 1s;
+  overflow-x: hidden;
+  font-family: cursive ;
+}
+html{
+  cursor: url(mug_coffee_PNG16809.png),auto;
+}
+#header{
+  background: url(IMG_20200119_184803_578.jpg) ;
+  width: 100%;
+  height: 80px;
+  color: #EDF9B7;
+  text-align: center;
+  font-size: 60px;
+  animation-duration: 1s;
+  animation-name: backgroundHeader;
+}
+@keyframes backgroundHeader{
+  from{
+    height: 20px;
+    font-size: 10px;
+  } to{
+    height: 80px;
+    font-size: 60px;
+  }
+}
+h1{
+  text-align: center;
+}
+.productImg{
+width: 200px;
+margin: 10px;
+}
+
+table{
+  margin: 50px;
+  left: 5%;
+  position: relative;
+  box-shadow: 0 0 0px;
+  animation-name: posFix;
+  animation-duration: 1s;
+  background-color: white;
+  z-index: 1;
+}
+
+@keyframes posFix{
+  from{
+    left: 1%;
+  }
+   to{
+    left: 5%;
+  }
+}
+
+td{
+  padding: 13px;
+  width: 250px;
+  height: 300px;
+  box-shadow: 0 0 0px;
+  transition-property: box-shadow ;
+  transition-duration: 0.5s;
+  background-color: white;
+}
+
+#description{
+  width: 70%;
+  height: 30%;
+  left: 12%;
+  position: relative;
+  margin: 20px;
+  box-shadow: 0 0 30px;
+  padding: 20px;
+  background-color: white;
+}
+.addToCard{
+  background-color: #AEBF93;
+  width: 90px;
+  height: 38px;
+  text-align: center;
+  box-shadow:0px 0 5px 3px;
+  font-size: 13px;
+  font-weight: bolder;
+  padding: 3px;
+  transition-property: background-color ;
+  transition-duration: 0.5s;
+}
+
+#headerImg{
+  position: absolute;
+  left: 10px;
+  animation-duration: 1s;
+  animation-name: headerImgAnim;
+  width:80px
+}
+@keyframes headerImgAnim{
+  from{
+    width: 20px;
+  }
+  to{
+    width:80px;
+  }
+}
+
+footer{
+  width: 100%;
+  background: url(IMG_20200119_184803_578.jpg) ;
+  height: 40px;
+  text-align: center;
+  padding: 5px;
+}
+#callUs{
+  width:70px ;
+  transition-property: box-shadow 0.3s;
+  box-shadow: 0 0 3px;
+  background-color: #CBF8E9;
+  border: 3px solid #ABF3DC;
+  bottom: 10px;
+  z-index: 2;
+}
+.callUsContact{
+  width: 50px;
+  position: fixed;
+  bottom: 24px;
+  right: 50px;
+  border-radius: 100px;
+  transition: bottom 0.5s, left 1s, width 0.3s ;
+  animation-name: callUs;
+  animation-duration: 1s;
+  z-index: 2;
+}
+
+.imgFloat{
+float: left;
+width: 20px;
+}
+.productImg{
+  width:100px;
+  height: 120px;
+}
+
+#bascet{
+  position: fixed;
+  height: 65px;
+  padding: 4px;
+  right: 2%;
+  top: 2%;
+  border-radius: 20px;
+  background-color: rgba(237, 239, 183, 0.5);
+  transition-property: background-color ;
+  transition-duration: 0.5s;
+}
+
+a{
+  cursor: url(mug_coffee_PNG16809.png),auto;
+}
+
+#bascetAnimation{
+  animation-duration: 1s;
+  animation-name: heightBascet;
+}
+@keyframes heightBascet{
+  from{
+    width: 20px;
+  }
+  to{
+   width: 60px;
+  }
+}
+
+#descriptionVideo{
+  margin: 20px;;
+  float: right;
+}
+.modalAddToCard{
+  background-color: #DCE1B0;
+  border-radius: 15px;
+  width: 600px;
+  height: 400px;
+  position: fixed;
+  top: 22%;
+  left: 20%;
+  z-index: 2;
+  box-shadow:1px 0 0 1000px rgba(24, 37, 51, 0.5);
+  border: 3px solid #022221;
+}
+.removeModal{
+  width: 35px;
+  height: 35px;
+  background-color: rgba(192, 188, 88, 1);
+  position: absolute;
+  right: -10px;
+  top: -10px;
+  font-size: 25px;
+  text-align: center;
+  border: 3px solid #022221;
+  border-radius: 100px;
+  box-shadow:0 0 5px black;
+}
