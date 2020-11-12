@@ -1,0 +1,301 @@
+body{
+  background-attachment: fixed;
+  background-image: url(backraund.jpg);
+  transition-property: background-color;
+  transition-duration: 1s;
+  overflow-x: hidden;
+  font-family: cursive ;
+}
+
+.paralax{
+  width: 105%;
+  position: relative;
+  left: -8px;
+  bottom: -8px;
+  padding: 30px 0px 0px 0px;
+  margin: 0px;
+  background: url(275927333.jpg) no-repeat;
+  box-shadow: 0px 0px 10px;
+}
+
+html{
+  cursor: url(cursornew.png),auto;
+}
+#header{
+  background: url(IMG_20200119_184803_578.jpg) ;
+  width: 100%;
+  height: 80px;
+  color: #EDF9B7;
+  text-align: center;
+  font-size: 60px;
+  animation-duration: 1s;
+  animation-name: backgroundHeader;
+  opacity: 0.9;
+}
+@keyframes backgroundHeader{
+  from{
+    height: 20px;
+    font-size: 10px;
+  } to{
+    height: 80px;
+    font-size: 60px;
+  }
+}
+h1{
+  text-align: center;
+}
+.productImg{
+width: 200px;
+margin: 10px;
+}
+
+table{
+  margin: 50px;
+  left: 5%;
+  position: relative;
+  box-shadow: 0 0 0px;
+  animation-name: posFix;
+  animation-duration: 1s;
+  background-color: white;
+  z-index: 1;
+  opacity: 0.9;
+}
+
+@keyframes posFix{
+  from{
+    left: 1%;
+  }
+   to{
+    left: 5%;
+  }
+}
+
+td{
+  padding: 13px;
+  width: 250px;
+  height: 300px;
+  box-shadow: 0 0 0px;
+  transition-property: box-shadow ;
+  transition-duration: 0.5s;
+  background-color: white;
+}
+
+#description{
+  width: 70%;
+  height: 30%;
+  left: 12%;
+  position: sticky;
+  top: 10px;
+  margin: 20px;
+  box-shadow: 0 0 30px;
+  padding: 20px;
+  background-color: white;
+}
+.addToCard{
+  background-color: #AEBF93;
+  width: 90px;
+  height: 38px;
+  text-align: center;
+  box-shadow:0px 0 4px;
+  font-size: 13px;
+  font-weight: bolder;
+  padding: 3px;
+  transition-property: background-color, box-shadow ;
+  transition-duration: 0.1s;
+  border-radius: 5px;
+}
+.addToCard:hover{
+  box-shadow:0px 0 7px 1.5px;
+}
+
+#headerImg{
+  position: absolute;
+  left: 10px;
+  animation-duration: 1s;
+  animation-name: headerImgAnim;
+  width:80px
+}
+@keyframes headerImgAnim{
+  from{
+    width: 20px;
+  }
+  to{
+    width:80px;
+  }
+}
+
+footer{
+  width: 100%;
+  background: url(IMG_20200119_184803_578.jpg) ;
+  height: 55px;
+  text-align: center;
+  padding: 5px;
+  opacity: 0.9;
+  margin: 0px;
+}
+
+.callUsContact{
+  width: 50px;
+  position: fixed;
+  right: 50px;
+  border-radius: 100px;
+  transition: width, opacity 0.3s, left 1s, width 0.3s ;
+  animation-name: callUs;
+  animation-duration: 1s;
+  z-index: 2;
+  background-color: rgba(221, 236, 196, 1);
+  opacity: 0.7;
+}
+
+#callUsTelegram{
+  bottom: 70px;
+}
+
+
+#callUsInstagram{
+  bottom: 130px;
+}
+
+#callUsNumber{
+  bottom: 190px;
+}
+
+#callUsTelegram:hover, #callUsInstagram:hover, #callUsNumber:hover{
+  width: 60px;
+  opacity: 1;
+}
+
+
+.imgFloat{
+float: left;
+width: 20px;
+}
+.productImg{
+  width:100px;
+  height: 120px;
+}
+
+#bascet{
+  width: 80px;
+  position: fixed;
+  height: 65px;
+  padding: 4px;
+  right: 2%;
+  top: 2%;
+  border-radius: 20px;
+  background-color: rgba(237, 239, 183, 0.5);
+  z-index: 2;
+  transition-property: background-color ;
+  transition-duration: 0.5s;
+}
+
+a{
+  text-decoration:none ;
+  cursor: url(cursornew.png),auto;
+  color: #485043;
+}
+
+#bascetAnimation{
+  animation-duration: 1s;
+  animation-name: heightBascet;
+}
+@keyframes heightBascet{
+  from{
+    width: 20px;
+  }
+  to{
+   width: 60px;
+  }
+}
+
+#descriptionVideo{
+  margin: 20px;;
+  float: right;
+}
+.modalAddToCard{
+  background-color: #DCE1B0;
+  border-radius: 15px;
+  width: 600px;
+  height: 400px;
+  position: fixed;
+  top: 22%;
+  left: 20%;
+  z-index: 2;
+  box-shadow:1px 0 0 1000px rgba(24, 37, 51, 0.5);
+  border: 3px solid #022221;
+}
+.removeModal{
+  width: 35px;
+  height: 35px;
+  background-color: rgba(192, 188, 88, 1);
+  position: absolute;
+  right: -10px;
+  top: -10px;
+  font-size: 25px;
+  text-align: center;
+  transition-property: width, border, box-shadow ;
+  transition-duration: 0.1s;
+  border-radius: 100px;
+  box-shadow:0 0 2px #C0BC58;
+}
+.removeModal:hover{
+  border: 3px solid #C0BC58;
+  box-shadow:0 0 5px #0D2429;
+}
+
+.imgModal{
+  width: 65px;
+  display: inline;
+  float: left;
+  margin: 8px;
+}
+.modalButton{
+  width: 25px;
+  height: 25px;
+  display: inline;
+  border: 2px solid #E1E6BD;
+  border-radius: 100px;
+  transition-property: width, border ;
+  transition-duration: 0.3s;
+}
+.modalButton:hover{
+  border: 2px solid #04362D;
+}
+.modalBlock{
+  height: 100px;
+  position: relative;
+  background-color: #E1E6BD;
+  margin:20px 15px;
+  padding: 15px;
+  width: 530px;
+  font-size: 21px;
+  border-radius: 15px;
+  transition-property: box-shadow;
+  transition-duration: 0.3s;
+}
+.modalBlock:hover{
+box-shadow: 1px 0 0 1px #022221;
+}
+.totalAdd{
+  margin: 5px;
+  font-size: 27px;
+}
+#elemAddModal{
+  position: absolute;
+  bottom: 10px;
+  left: 40%;
+  background-color: #AEBF93;
+  width: 80px;
+  height: 25px;
+  text-align: center;
+  box-shadow:0px 0 4px;
+  font-size: 13px;
+  font-weight: bolder;
+  padding: 3px;
+  transition-property: box-shadow ;
+  transition-duration: 0.1s;
+  border-radius: 5px;
+}
+#elemAddModal:hover{
+  box-shadow:0px 0 1px 2px #05251E;
+}

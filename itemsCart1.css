@@ -1,0 +1,104 @@
+body{
+  background-attachment: fixed;
+  background-image: url(backraund.jpg);
+  transition-property: background-color;
+  transition-duration: 1s;
+  overflow-x: hidden;
+  font-family: cursive ;
+}
+
+
+html{
+  cursor: url(cursornew.png),auto;
+}
+#header{
+  background: url(IMG_20200119_184803_578.jpg) ;
+  width: 100%;
+  height: 80px;
+  color: #EDF9B7;
+  text-align: center;
+  font-size: 60px;
+  animation-duration: 1s;
+  animation-name: backgroundHeader;
+  opacity: 0.9;
+}
+@keyframes backgroundHeader{
+  from{
+    height: 20px;
+    font-size: 10px;
+  } to{
+    height: 80px;
+    font-size: 60px;
+  }
+}
+h1{
+  text-align: center;
+}
+.productImg{
+width: 200px;
+margin: 10px;
+}
+
+#headerImg{
+  position: absolute;
+  left: 10px;
+  animation-duration: 1s;
+  animation-name: headerImgAnim;
+  width:80px
+}
+@keyframes headerImgAnim{
+  from{
+    width: 20px;
+  }
+  to{
+    width:80px;
+  }
+}
+
+footer{
+  position: absolute;
+  width: 100%;
+  background: url(IMG_20200119_184803_578.jpg) ;
+  height: 55px;
+  text-align: center;
+  padding: 5px;
+  opacity: 0.9;
+  margin: 0px;
+  bottom: 0px;
+}
+
+.callUsContact{
+  width: 50px;
+  position: fixed;
+  right: 50px;
+  border-radius: 100px;
+  transition: width, opacity 0.3s, left 1s, width 0.3s ;
+  animation-name: callUs;
+  animation-duration: 1s;
+  z-index: 2;
+  background-color: rgba(221, 236, 196, 1);
+  opacity: 0.7;
+}
+
+#callUsTelegram{
+  bottom: 70px;
+}
+
+
+#callUsInstagram{
+  bottom: 130px;
+}
+
+#callUsNumber{
+  bottom: 190px;
+}
+
+#callUsTelegram:hover, #callUsInstagram:hover, #callUsNumber:hover{
+  width: 60px;
+  opacity: 1;
+}
+
+a{
+  text-decoration:none ;
+  cursor: url(cursornew.png),auto;
+}
