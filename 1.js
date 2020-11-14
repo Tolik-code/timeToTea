@@ -13,19 +13,63 @@ product.onmouseover = function (event){
     if(!td){return}
     td.style.boxShadow ="0 0 15px";
 };
-
-
-let itemsCart = document.getElementById('itemsCart');
+let goodsBascet;
 let items, items1;
+if(localStorage.getItem('goodsCookie')){
+  let valueJsonCoocie = localStorage.getItem('goodsCookie');
+  goodsBascet = JSON.parse(valueJsonCoocie);
+}else { goodsBascet = {
+   TG:0,
+   P:0,
+   P1:0,
+   DH:0,
+   GP:0,
+   GP1:0,
+   itemsTotal:0,
+};
+}
+
+
+itemsCart = document.getElementById('itemsCart');
+itemsCart.value = goodsBascet.itemsTotal;
+function recordGoods(){
+  if(document.getElementById('totalAddTG')){
+    let totalAdd = document.getElementById('totalAddTG');
+    goodsBascet.TG += +totalAdd.value;
+  }
+  if(document.getElementById('totalAddP')){
+    let totalAdd = document.getElementById('totalAddP');
+    let totalAdd1 = document.getElementById('totalAddP1');
+    goodsBascet.P += +totalAdd.value;
+    goodsBascet.P1 += +totalAdd1.value;
+  }
+  if(document.getElementById('totalAddDH')){
+    let totalAdd = document.getElementById('totalAddDH');
+    goodsBascet.DH += +totalAdd.value;
+  }
+  if(document.getElementById('totalAddGP')){
+    let totalAdd = document.getElementById('totalAddGP');
+    let totalAdd1 = document.getElementById('totalAddGP1');
+    goodsBascet.GP += +totalAdd.value;
+    goodsBascet.GP1 += +totalAdd1.value;
+  }
+}
+
+function recordGoodsCookie(){
+  localStorage.setItem('goodsCookie',JSON.stringify(goodsBascet));
+}
+
 function addItemsCard(){
     if(document.getElementById('totalAddDH')){items.value /= 10;}
   if(document.getElementById('totalAddP')||document.getElementById('totalAddGP')){
-      itemsCart.value = (itemsCart.value*1) + (items.value*1) + (items1.value*1);
+    goodsBascet.itemsTotal = (goodsBascet.itemsTotal*1) + (items.value*1) + (items1.value*1);
+
     }
   else if(items.value>0){
-    itemsCart.value = (itemsCart.value*1) + (items.value*1);
+    goodsBascet.itemsTotal = (goodsBascet.itemsTotal*1) + (items.value*1);
   } else {return;}
 }
+
 
 let addTG = document.getElementById('addTG');
 let addP = document.getElementById('addP');
@@ -33,7 +77,7 @@ let addDH = document.getElementById('addDH');
 let addGP = document.getElementById('addGP');
 let elemAddModal;
 
-
+console.log(localStorage.getItem('goodsCookie'));
 function createMAddToCard(modalContent,modalContent1){
     let modal = document.createElement('div');
     let elemRemModal = document.createElement('div');
@@ -49,8 +93,11 @@ function createMAddToCard(modalContent,modalContent1){
     elemAddModal.id = 'elemAddModal';
     elemAddModal.innerHTML = '<div><img src="icons8-корзина-50.png" class="imgFloat"/>добавить</div>';
     elemAddModal.onclick = function(){
+        recordGoods();
         addItemsCard();
         modalRemove();
+        recordGoodsCookie();
+        itemsCart.value = goodsBascet.itemsTotal;
     };
 
     modal.prepend(elemRemModal);
