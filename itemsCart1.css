@@ -56,15 +56,15 @@ margin: 10px;
 }
 
 footer{
-  position: absolute;
+  
   width: 100%;
   background: url(IMG_20200119_184803_578.jpg) ;
-  height: 55px;
+  height: 75px;
   text-align: center;
   padding: 5px;
   opacity: 0.9;
-  margin: 0px;
-  bottom: 0px;
+  margin-top: 30px;
+  margin-bottom: 0px;
 }
 
 .callUsContact{
@@ -120,4 +120,32 @@ a{
   display: inline;
   float: left;
   margin: 8px;
+}
+.bascetButton{
+  width: 25px;
+  height: 25px;
+  display: inline;
+  border: 2px solid #E1E6BD;
+  border-radius: 100px;
+  transition-property: width, border ;
+  transition-duration: 0.3s;
+}
+.bascetButton:hover{
+  border: 2px solid #04362D;
+}
+
+.totalBascetGoods{
+  height: 100px;
+  position: relative;
+  background-color: #E1E6BD;
+  margin:20px 15px;
+  padding: 15px;
+  width: 80%;
+  font-size: 24px;
+  border-radius: 15px;
+  transition-property: box-shadow;
+  transition-duration: 0.3s;
+}
+.totalBascetGoods:hover{
+box-shadow: 1px 0 0 1px #022221;
 }
