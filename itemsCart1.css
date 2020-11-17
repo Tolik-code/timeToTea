@@ -106,13 +106,14 @@ a{
 #totalBascetItem{
   width: 80%;
   min-height: 300px;
-  background-color: #D3DCC7;
+  background-color: rgba(211, 220, 199, 0.8);
   margin-left: 5%;
   position: relative;
   margin-top: 50px;
   box-shadow: 0 0 30px;
   padding: 20px;
   border-radius: 5px;
+  
 }
 
 .imgBasketTotal{
@@ -148,4 +149,24 @@ a{
 }
 .totalBascetGoods:hover{
 box-shadow: 1px 0 0 1px #022221;
+}
+.goodsDeleteOn{
+  position: absolute;
+  font-size: 20px;
+  background-color: rgba(141, 202, 154, 0.219);
+  border-radius: 100px;
+  width: 30px;
+  height: 30px;
+  text-align: center;
+  box-shadow: 0 0 10px;
+  transition-property: border, font-size, width, height;
+  transition-duration: 0.15s;
+  top: -5px;
+  left: -5px;
+}
+.goodsDeleteOn:hover{
+  
+  font-size: 25px;
+  width: 34px;
+  height: 34px;
 }

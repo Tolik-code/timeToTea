@@ -223,6 +223,20 @@ a{
   z-index: 2;
   box-shadow:1px 0 0 1000px rgba(24, 37, 51, 0.5);
   border: 3px solid #022221;
+  animation-duration: 0.2s;
+  animation-name: animModal;
+}
+@keyframes animModal{
+  from{
+    height: 70px;
+    width: 80px;
+    opacity: .1;
+  }
+  to{
+   height: 400px;
+   width: 600px;
+   opacity: .6;
+  }
 }
 .removeModal{
   width: 35px;
