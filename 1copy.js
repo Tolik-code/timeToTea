@@ -15,7 +15,8 @@ if(localStorage.getItem('goodsCookie')){
    itemsTotal:0,
  };
 }
-
+let checkout = document.getElementById('checkout');
+if(goodsBascet.itemsTotal ==0){checkout.remove();}
 
 function recordGoodsCookie(){
   localStorage.setItem('goodsCookie',JSON.stringify(goodsBascet));
@@ -55,6 +56,7 @@ function deleteGoodsOn(product){
     goodsBascet[product] = 0;
     console.log(goodsBascet);
     recordGoodsCookie();
+    if(goodsBascet.itemsTotal < 1){checkout.remove();}
 }
 
 let add;
@@ -198,3 +200,16 @@ if(productName == 'GP1'){
 for( let key in goodsBascet){
   if(goodsBascet[key]>0){if(key == 'itemsTotal'){break;}createProductBascet(key);}
 }
+
+let say = document.getElementById('say');
+for(let key in goodsBascet){
+  if(goodsBascet[key]>0){say.value+=goodsBascet[key]+key+'__';}
+}
+
+// const formData = new FormData();
+// formData.append('qwqwqw','qwert');
+// let xhr = new XMLHttpRequest();
+//   xhr.open("POST", "http://localhost:3000/");
+//   xhr.setRequestHeader('Content-type', 'application/json; charset=utf-8');
+//   xhr.send(formData);
+//   xhr.onload = function () { alert(xhr.response); };

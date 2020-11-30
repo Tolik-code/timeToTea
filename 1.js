@@ -3,13 +3,13 @@ let product= document.getElementById("product");
 
 product.onmouseout = function (event){
     let target= event.target;
-    let td = event.target.closest('td');
+    let td = event.target.closest('div');
     if(!td){return}
     td.style.boxShadow ="0 0 0px";
 };
 product.onmouseover = function (event){
     let target= event.target;
-    let td = event.target.closest('td');
+    let td = event.target.closest('div');
     if(!td){return}
     td.style.boxShadow ="0 0 15px";
 };

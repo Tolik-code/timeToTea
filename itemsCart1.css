@@ -4,7 +4,7 @@ body{
   transition-property: background-color;
   transition-duration: 1s;
   overflow-x: hidden;
-  font-family: cursive ;
+  font-family:cursive, Verdana, Geneva, Tahoma, sans-serif;
 }
 
 
@@ -63,8 +63,8 @@ footer{
   text-align: center;
   padding: 5px;
   opacity: 0.9;
-  margin-top: 30px;
-  margin-bottom: 0px;
+  margin-top: 60px;
+  margin-bottom: -20px;
 }
 
 .callUsContact{
@@ -103,6 +103,13 @@ a{
   cursor: url(cursornew.png),auto;
 }
 
+.imgDelivery{
+  width: 100px;
+}
+form{
+  color: #e0ecb3;
+}
+
 #totalBascetItem{
   width: 80%;
   min-height: 300px;
@@ -136,7 +143,7 @@ a{
 }
 
 .totalBascetGoods{
-  height: 100px;
+  min-height: 100px;
   position: relative;
   background-color: #E1E6BD;
   margin:20px 15px;
@@ -169,4 +176,26 @@ box-shadow: 1px 0 0 1px #022221;
   font-size: 25px;
   width: 34px;
   height: 34px;
+}
+
+#checkout{
+  position: relative;
+  margin-top: 10px;
+  margin-bottom: -35px;
+  margin-left: 40%;
+  text-align: center;
+  background-color: #b6d285;
+  width: 150px;
+  height: 55px;
+  border-radius: 15px;
+  font-size: 17px;
+  transition-property:background-color, color;
+  transition-duration: 0.3s;
+  border: 1px solid #0B0E05;
+  color: #0b0e05ce;
+}
+
+#checkout:hover{
+  background-color: #b6d285;
+  color: #0b0e05;
 }
