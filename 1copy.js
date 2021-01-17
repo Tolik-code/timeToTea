@@ -21,11 +21,11 @@ if(goodsBascet.itemsTotal ==0){checkout.remove();}
 function recordGoodsCookie(){
   localStorage.setItem('goodsCookie',JSON.stringify(goodsBascet));
 }
-console.log(goodsBascet);
 
 
 
-function goodsPayment(name, totalAdd, totalPrice, totalWeight, price, weight, x){
+
+function goodsPayment(name, totalAdd, totalPrice, totalWeight, price, weight, x = 1){
   
   add.onclick = function(){
     totalAdd.value = (totalAdd.value*1)+x;
@@ -49,12 +49,9 @@ function goodsPayment(name, totalAdd, totalPrice, totalWeight, price, weight, x)
 }
 
 
-
 function deleteGoodsOn(product){
-  if(product == 'DH'){goodsBascet.itemsTotal = goodsBascet.itemsTotal - goodsBascet[product]/10;}
-  else {goodsBascet.itemsTotal -= goodsBascet[product];}
+goodsBascet.itemsTotal -= goodsBascet[product];
     goodsBascet[product] = 0;
-    console.log(goodsBascet);
     recordGoodsCookie();
     if(goodsBascet.itemsTotal < 1){checkout.remove();}
 }
@@ -75,20 +72,20 @@ if(productName == 'TG'){
   let totalPriceTG = document.getElementById('totalPriceTG');
   let totalWeightTG = document.getElementById('totalWeightTG');
 
-   totalAddTG.value = goodsBascet.TG;
-   totalPriceTG.value = goodsBascet.TG*20;
-   totalWeightTG.value = goodsBascet.TG*7;
+   totalAddTG.value = goodsBascet[productName];
+   totalPriceTG.value = goodsBascet[productName]*20;
+   totalWeightTG.value = goodsBascet[productName]*7;
 
   let deleteTG = document.getElementById('deleteTG');
 
   deleteTG.onclick = function(){
     element.remove();
-    deleteGoodsOn('TG');
+    deleteGoodsOn(productName);
   };
 
    add = document.getElementById('add');
    minus = document.getElementById('minus');
-  goodsPayment('TG', totalAddTG, totalPriceTG, totalWeightTG, 20, 7, 1);
+  goodsPayment(productName, totalAddTG, totalPriceTG, totalWeightTG, 20, 7);
 }
 if(productName == 'P'){
   element.innerHTML = '<div id="productTG"> <div class="goodsDeleteOn" id="deleteP">X</div> <img src="IMG_20200407_122439.jpg" class="imgBasketTotal"/> Шу пуер. Бліни по 250грам/370грн. <img src="plus_PNG19.png" class="bascetButton" id="add1"/> <img src="minus_PNG27.png" class="bascetButton" id="minus1"/> <output class="totalAdd" id="totalAddP">0</output>шт <output class="totalAdd" id="totalPriceP">0</output>grn <output class="totalAdd" id="totalWeightP">0</output>грам </div>';
@@ -104,12 +101,12 @@ if(productName == 'P'){
 
   deleteP.onclick = function(){
     element.remove();
-    deleteGoodsOn('P');
+    deleteGoodsOn(productName);
   };
 
    add = document.getElementById('add1');
    minus = document.getElementById('minus1');
-  goodsPayment('P',totalAddP, totalPriceP, totalWeightP, 370, 250, 1);
+  goodsPayment(productName,totalAddP, totalPriceP, totalWeightP, 370, 250);
 }
 if(productName == 'P1'){
   element.innerHTML = '<div id="productTG"> <div class="goodsDeleteOn" id="deleteP1">X</div> <img src="puer_kubiki.jpg" class="imgBasketTotal"/> Шу пуер. Кубики 6грам/10грн. <img src="plus_PNG19.png" class="bascetButton" id="add2"/> <img src="minus_PNG27.png" class="bascetButton" id="minus2"/> <output class="totalAdd" id="totalAddP1">0</output>шт <output class="totalAdd" id="totalPriceP1">0</output>grn <output class="totalAdd" id="totalWeightP1">0</output>грам </div>';
@@ -125,32 +122,33 @@ if(productName == 'P1'){
 
   deleteP1.onclick = function(){
     element.remove();
-    deleteGoodsOn('P1');
+    deleteGoodsOn(productName);
   };
 
    add = document.getElementById('add2');
    minus = document.getElementById('minus2');
-  goodsPayment('P1',totalAddP1, totalPriceP1, totalWeightP1, 10, 6, 1);
+  goodsPayment(productName,totalAddP1, totalPriceP1, totalWeightP1, 10, 6);
 }
 if(productName == 'DH'){
-  element.innerHTML = '<div id="productTG"> <div class="goodsDeleteOn" id="deleteDH">X</div> <img src="IMG_20200408_161445_985.jpg" class="imgBasketTotal"/> Да хун пао класичний, на вагу 10грам/20грн. <img src="plus_PNG19.png" class="bascetButton" id="add3"/> <img src="minus_PNG27.png" class="bascetButton" id="minus3"/> <output class="totalAdd" id="totalAddDH">0</output>грам  <output class="totalAdd" id="totalPriceDH">0</output>grn </div>';
+  element.innerHTML = '<div id="productTG"> <div class="goodsDeleteOn" id="deleteDH">X</div> <img src="IMG_20200408_161445_985.jpg" class="imgBasketTotal"/> Да хун пао класичний, на вагу 10грам/20грн. <img src="plus_PNG19.png" class="bascetButton" id="add3"/> <img src="minus_PNG27.png" class="bascetButton" id="minus3"/> <output class="totalAdd" id="totalAddDH">0</output>шт  <output class="totalAdd" id="totalPriceDH">0</output>grn <output class="totalAdd" id="totalWeightDH">0</output>грам  </div>';
 let totalAddDH = document.getElementById('totalAddDH');
 let totalPriceDH = document.getElementById('totalPriceDH');
+let totalWeightDH = document.getElementById('totalWeightDH');
 
    totalAddDH.value = goodsBascet.DH;
-   totalPriceDH.value = goodsBascet.DH*2;
-   
+   totalPriceDH.value = goodsBascet.DH*20;
+   totalWeightDH.value = goodsBascet.DH*10;
 
 let deleteDH = document.getElementById('deleteDH');
 
   deleteDH.onclick = function(){
     element.remove();
-    deleteGoodsOn('DH');
+    deleteGoodsOn(productName);
   };
 
  add = document.getElementById('add3');
  minus = document.getElementById('minus3');
-goodsPayment('DH',totalAddDH, totalPriceDH, 0, 2, 0, 10);}
+goodsPayment(productName,totalAddDH, totalPriceDH,totalWeightDH, 20, 10);}
 if(productName == 'GP'){
   element.innerHTML = '<div id="productTG"> <div class="goodsDeleteOn" id="deleteGP">X</div> <img src="IMG_20200414_133240.jpg" class="imgBasketTotal"/>Шен (зелений) пуер. Кульки 7грам/26грн <img src="plus_PNG19.png" class="bascetButton" id="add4"/> <img src="minus_PNG27.png" class="bascetButton" id="minus4"/> <output class="totalAdd" id="totalAddGP">0</output>шт <output class="totalAdd" id="totalPriceGP">0</output>grn <output class="totalAdd" id="totalWeightGP">0</output>грам </div>';
   let totalAddGP = document.getElementById('totalAddGP');
@@ -165,12 +163,12 @@ if(productName == 'GP'){
 
   deleteGP.onclick = function(){
     element.remove();
-    deleteGoodsOn('GP');
+    deleteGoodsOn(productName);
   };
 
    add = document.getElementById('add4');
    minus = document.getElementById('minus4');
-  goodsPayment('GP',totalAddGP, totalPriceGP, totalWeightGP, 26, 7, 1);
+  goodsPayment(productName,totalAddGP, totalPriceGP, totalWeightGP, 26, 7);
 }
 if(productName == 'GP1'){
   element.innerHTML = '<div id="productTG"> <div class="goodsDeleteOn" id="deleteGP1">X</div> <img src="IMG_20200427_181329_418.jpg" class="imgBasketTotal"/> Шен (зелений) пуер. Бліни по 350грам/690грн. <img src="plus_PNG19.png" class="bascetButton" id="add5"/> <img src="minus_PNG27.png" class="bascetButton" id="minus5"/> <output class="totalAdd" id="totalAddGP1">0</output>шт <output class="totalAdd" id="totalPriceGP1">0</output>grn <output class="totalAdd" id="totalWeightGP1">0</output>грам </div>';
@@ -186,12 +184,12 @@ if(productName == 'GP1'){
 
   deleteGP1.onclick = function(){
     element.remove();
-    deleteGoodsOn('GP1');
+    deleteGoodsOn(productName);
   };
 
    add = document.getElementById('add5');
    minus = document.getElementById('minus5');
-  goodsPayment('GP1',totalAddGP1, totalPriceGP1, totalWeightGP1, 690, 357, 1);
+  goodsPayment(productName,totalAddGP1, totalPriceGP1, totalWeightGP1, 690, 357);
 }
 
   
@@ -206,10 +204,3 @@ for(let key in goodsBascet){
   if(goodsBascet[key]>0){say.value+=goodsBascet[key]+key+'__';}
 }
 
-// const formData = new FormData();
-// formData.append('qwqwqw','qwert');
-// let xhr = new XMLHttpRequest();
-//   xhr.open("POST", "http://localhost:3000/");
-//   xhr.setRequestHeader('Content-type', 'application/json; charset=utf-8');
-//   xhr.send(formData);
-//   xhr.onload = function () { alert(xhr.response); };

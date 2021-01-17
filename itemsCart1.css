@@ -18,19 +18,16 @@ html{
   color: #EDF9B7;
   text-align: center;
   font-size: 60px;
-  animation-duration: 1s;
-  animation-name: backgroundHeader;
   opacity: 0.9;
 }
-@keyframes backgroundHeader{
-  from{
-    height: 20px;
-    font-size: 10px;
-  } to{
-    height: 80px;
-    font-size: 60px;
+
+@media all and (max-width: 800px) {
+  #header {
+    font-size: 40px;
   }
-}
+ }
+
+
 h1{
   text-align: center;
 }
@@ -42,18 +39,9 @@ margin: 10px;
 #headerImg{
   position: absolute;
   left: 10px;
-  animation-duration: 1s;
-  animation-name: headerImgAnim;
   width:80px
 }
-@keyframes headerImgAnim{
-  from{
-    width: 20px;
-  }
-  to{
-    width:80px;
-  }
-}
+
 
 footer{
   
@@ -73,8 +61,6 @@ footer{
   right: 50px;
   border-radius: 100px;
   transition: width, opacity 0.3s, left 1s, width 0.3s ;
-  animation-name: callUs;
-  animation-duration: 1s;
   z-index: 2;
   background-color: rgba(221, 236, 196, 1);
   opacity: 0.7;
@@ -146,10 +132,13 @@ form{
   min-height: 100px;
   position: relative;
   background-color: #E1E6BD;
-  margin:20px 15px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 10px;
+  font-size: 17px;
   padding: 15px;
-  width: 80%;
-  font-size: 24px;
+  width: 92%;
+  
   border-radius: 15px;
   transition-property: box-shadow;
   transition-duration: 0.3s;

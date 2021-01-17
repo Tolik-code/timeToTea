@@ -30,19 +30,10 @@ html{
   color: #EDF9B7;
   text-align: center;
   font-size: 60px;
-  animation-duration: 1s;
-  animation-name: backgroundHeader;
   opacity: 0.9;
 }
-@keyframes backgroundHeader{
-  from{
-    height: 20px;
-    font-size: 10px;
-  } to{
-    height: 80px;
-    font-size: 60px;
-  }
-}
+
+
 h1{
   text-align: center;
 }
@@ -80,14 +71,26 @@ margin: 10px;
 #description{
   width: 70%;
   height: 30%;
-  left: 12%;
+  margin-right: auto;
+  margin-left: auto;
   position: sticky;
   top: -30%;
-  margin: 20px;
+  margin-bottom: 20px;
+  margin-top: 20px;
   box-shadow: 0 0 30px;
   padding: 20px;
   background-color: white;
 }
+
+@media all and (max-width: 800px) {
+  #header {
+    font-size: 40px;
+  }
+  #description{
+    width: 87%;
+  }
+ }
+
 .addToCard{
   background-color: #AEBF93;
   width: 90px;
@@ -108,18 +111,9 @@ margin: 10px;
 #headerImg{
   position: absolute;
   left: 10px;
-  animation-duration: 1s;
-  animation-name: headerImgAnim;
   width:80px
 }
-@keyframes headerImgAnim{
-  from{
-    width: 20px;
-  }
-  to{
-    width:80px;
-  }
-}
+
 
 footer{
   width: 95%;
@@ -139,8 +133,6 @@ footer{
   right: 50px;
   border-radius: 100px;
   transition: width, opacity 0.3s, left 1s, width 0.3s ;
-  animation-name: callUs;
-  animation-duration: 1s;
   z-index: 2;
   background-color: rgba(221, 236, 196, 1);
   opacity: 0.7;
@@ -214,8 +206,8 @@ a{
 .modalAddToCard{
   background-color: #DCE1B0;
   border-radius: 15px;
-  width: 600px;
-  height: 400px;
+  width: 55%;
+  padding-bottom: 40px;
   position: fixed;
   top: 22%;
   left: 20%;
@@ -225,15 +217,16 @@ a{
   animation-duration: 0.2s;
   animation-name: animModal;
 }
+
+
+
 @keyframes animModal{
   from{
-    height: 70px;
-    width: 80px;
+    
     opacity: .1;
   }
   to{
-   height: 400px;
-   width: 600px;
+  
    opacity: .6;
   }
 }
@@ -275,17 +268,31 @@ a{
   border: 2px solid #04362D;
 }
 .modalBlock{
-  height: 100px;
+  
   position: relative;
   background-color: #E1E6BD;
   margin:20px 15px;
   padding: 15px;
-  width: 530px;
+  padding-bottom: 30px;
+  width: 80%;
   font-size: 21px;
   border-radius: 15px;
   transition-property: box-shadow;
   transition-duration: 0.3s;
 }
+
+@media all and (max-width: 800px) {
+  .modalAddToCard{
+    
+    top: 7%;
+  }
+  .modalBlock{
+    font-size: 18px;
+    
+}
+
+ }
+
 .modalBlock:hover{
 box-shadow: 1px 0 0 1px #022221;
 }

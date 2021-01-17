@@ -16,11 +16,10 @@ if(localStorage.getItem('goodsCookie')){
  };
 }
 
-
 let say = document.getElementById('say');
-for(let key in goodsBascet){
-  if(goodsBascet[key]>0){say.value+=goodsBascet[key]+key+'__';}
-}
+say.value = JSON.stringify(goodsBascet);
+
+
 let deliveryBranch = document.getElementById('deliveryBranch');
 let expressDelivery = document.getElementById('expressDelivery');
 const express = document.getElementById('express');
@@ -34,10 +33,43 @@ branch.onclick = function(){
 };
 
 
-// const formData = new FormData();
-// formData.append('qwqwqw','qwert');
-// let xhr = new XMLHttpRequest();
-//   xhr.open("POST", "http://localhost:3000/");
-//   xhr.setRequestHeader('Content-type', 'application/json; charset=utf-8');
-//   xhr.send(formData);
-//   xhr.onload = function () { alert(xhr.response); };
+
+async function postData(url = '', data = {}) {
+  
+  const response = await fetch(url, {
+    method: 'POST', 
+    mode: 'cors', 
+    cache: 'no-cache', 
+    credentials: 'same-origin', 
+    headers: {
+      
+     
+    },
+    redirect: 'follow',
+    referrerPolicy: 'no-referrer', 
+    body: new FormData(data)
+  });
+  
+
+  return await response.json(); 
+  
+}
+
+const form = document.getElementById('form');
+
+const button = document.getElementById('button');
+button.onclick = function() {
+  
+  localStorage.removeItem('goodsCookie');
+
+  alert('Дякуємо, замовлення прийняте');
+  location.href = 'https://time-to-tea.online/index.html';
+
+  
+
+  postData('https://ptsv2.com/t/x65x3-1607257317/post',form)
+  .then((data) => {
+    console.log(data); 
+    
+  });};
+
